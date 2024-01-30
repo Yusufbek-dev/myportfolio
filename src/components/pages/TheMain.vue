@@ -2,34 +2,50 @@
     <section class="hero">
         <div class="main">
             <div class="left">
-                <h1>Hello Welcom to My Portfolio</h1>
-                <h2>I am a<span> Web develper</span></h2>
+                <h4>Hello,</h4>
+                <h1>
+                    I am <VueWriter :array="arr" />
+                </h1>
+               
                 <p class="main-description">I can help boost your bussness. 
                     If you wnat to improve your bussnes get in tuch with me 
                 </p>
                 <div class="socials">
-                    <a href="tel:912931771" class="icon">
+                    <a href="https://www.linkedin.com/in/yusufbek-008914246/" class="icon">
                         <img src="../../../images/icons/linkedin (1).png" alt="linkedin">
                     </a>
-                    <a href="tel:912931771" class="icon">
+                    <a href="https://github.com/Yusufbek-dev" class="icon">
                         <img src="../../../images/icons/github (2).png" alt="github">
                     </a>
-                    <a href="tel:912931771" class="icon">
+                    <a href="https://app.netlify.com/teams/yusufbek01" class="icon">
                         <img src="../../../images/icons/netlify.png" alt="netlify">
                     </a>
-                    <a href="tel:912931771" class="icon">
+                    <a href="https://t.me//Yusufbek_dev" class="icon">
                         <img src="../../../images/icons/telegram (1).png" alt="telegram">
                     </a>
                 </div>
-                <button @click="downloadPdf" download="download" class="cv-btn">Download PDF</button>
+                <button @click="downloadPdf" download="download" class="cv-btn">Download CV</button>
             </div>
             <div class="right">
-                <div class="shape">
-                    <div class="img">
-                        <img src="../../../images/yusufbek-removebg.png" alt="hero img">
+                <div class="shape" @mouseenter="imgChange" @mouseleave="imgChange">
+                    <div class="name">
+                       Yusufbek <br> Web developer <br><button>Contact me</button>
                     </div>
+                    <img class="img" src="../../../images/yusufbek-removebg.png" alt="hero img">ß
+                   
                 </div>
           </div>
+       </div>
+       <div class="tech-stack">
+        <p>Tech Stack</p>
+        <div class="stacks">
+            <img src="../../../images/icons/html.png" alt="html" />
+            <img src="../../../images/icons/css3.png" alt="css3" />
+            <img src="../../../images/icons/sass240.png" alt="sass" />
+            <img src="../../../images/icons/js240.png" alt="javascript" />
+            <img src="../../../images/icons/bootstrap6.png" alt="bootstrap" />
+            <img src="../../../images/icons/v240.png" alt="vue" />
+        </div>
     </div>
     </section>
 </template>
@@ -37,17 +53,30 @@
 <script>
 import {saveAs} from 'file-saver';
 export default {
+    data() {
+        return {
+              dispalyItem:false,
+              arr: ["Frontend develper", "Frilancer"]
+        }
+    },
     methods: {
         downloadPdf() {
             const pdfUrl = 'https://drive.google.com/file/d/1SZ31resszOFoXSIilVo8CSv-y0eGkEK8/view?usp=drive_link';
             saveAs(pdfUrl, 'cv.pdf')
-        }
+        }, 
+        imgChange(){
+            const showEl = this.$el.querySelector('.name');
+            showEl.classList.toggle('show');
+        },
     }
+
 }
 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
+
 .hero {
     padding: 140px 10% 100px;
     background:linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
@@ -66,14 +95,16 @@ export default {
     width:55%;
 }
 .left h1 {
+    display: flex;
+    column-gap: 10px;
     margin-bottom: 20px;
     font-size: 2.5rem;
     letter-spacing: 1px;
     color: #eaeaea;
 }
-.left h2 {
-    margin-bottom: 29px;
-    font-size: 1.8rem;
+.left h4 {
+    margin-bottom: 9px;
+    font-size: 1.2rem;
     letter-spacing: 1px;
     color: #eaeaea;
 }
@@ -94,13 +125,15 @@ h2>span {
   justify-content: center;
   align-items: center;
   position: relative;
-  border-top: 3px solid blue;
-  border-bottom: 3px solid blue;
+  border-top: 3px solid #4372e4;
+  border-bottom: 3px solid #4372e4;
   width: 330px;
   height: 330px;
   border-radius: 50%;
   animation: bgchange ease 2s 0s infinite forwards;
 }
+
+
 .shape {
   z-index: 99;
   position: relative;
@@ -119,15 +152,50 @@ h2>span {
   background: linear-gradient(to right, #000000, #434343);
   animation: change ease 2s 0s infinite forwards;
 }
-.shape img {
-  top: -100px;
-  left: -185px;
-  position: relative;
-  display: block;
-  width: 650px;
-  height: 420px;
-}
 
+.shape {
+    .img {
+        top: -100px;
+        left: -185px;
+        position: relative;
+        display: block;
+        width: 650px;
+        height: 420px;
+        z-index: 101;
+    }
+    .name {
+        z-index: 100;
+        position: relative;
+        background: linear-gradient(to right, #000000, #434343);
+        color: #4372e4;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 30% 20%;
+        width: 650px;
+        height: 420px;
+        font-size: 1.8rem;
+        button {
+            padding: 10px 14px;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #4372e4;
+            border: none;
+            cursor: pointer;
+        }
+    }
+    .name.show {
+        display: block;
+    }
+}
+@keyframes comeUp {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
 .cv-btn {
     padding: 10px 15px;
     background-color:#383838;
@@ -160,6 +228,34 @@ h2>span {
 .icon:hover {
     transform: scale(1.1);
 }
+
+
+.tech-stack {
+  width: 60%;
+  padding: 50px 0% 0;
+  display: flex;
+  justify-content: start;
+  column-gap: 40px;
+  align-items: center;
+  p {
+    color: #eaeaea;
+    font-size: 1.4rem;
+  }
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 30px;
+    img {
+      min-width: 60px;
+      min-height: 60px;
+      display: block;
+      max-width: 70px;
+      max-height: 70px;
+    }
+  }
+}
+
 
 
 @keyframes bgchange {
