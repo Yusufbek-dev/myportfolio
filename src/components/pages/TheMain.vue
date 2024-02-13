@@ -4,11 +4,11 @@
             <div class="left">
                 <h4>Hello,</h4>
                 <h1>
-                    I am <VueWriter :array="arr" />
+                    I am A <VueWriter :array="arr" />
                 </h1>
                
-                <p class="main-description">I can help boost your bussness. 
-                    If you wnat to improve your bussnes get in tuch with me 
+                <p class="main-description">Thank you for visiting! I'm developing creative & Interactive websites.
+                    Reach out if you'd like to learn more!
                 </p>
                 <div class="socials">
                     <a href="https://www.linkedin.com/in/yusufbek-008914246/" class="icon">
@@ -27,9 +27,9 @@
                 <button @click="downloadPdf" download="download" class="cv-btn">Download CV</button>
             </div>
             <div class="right">
-                <div class="shape" @mouseenter="imgChange" @mouseleave="imgChange">
-                    <div class="name">
-                       Yusufbek <br> Web developer <br><button>Contact me</button>
+                <div class="shape"  @mouseenter="imgChange" @mouseleave="imgChange">
+                    <div class="name" :class="{show:displayItem}">I'm
+                       Yusufbek <br>A Web Developer <br><button>Contact me</button>
                     </div>
                     <img class="img" src="../../../images/yusufbek-removebg.png" alt="hero img">ß
                    
@@ -55,8 +55,8 @@ import {saveAs} from 'file-saver';
 export default {
     data() {
         return {
-              dispalyItem:false,
-              arr: ["Frontend develper", "Frilancer"]
+              displayItem:false,
+              arr: ["Frontend Developer", "Freelancer"]
         }
     },
     methods: {
@@ -65,8 +65,9 @@ export default {
             saveAs(pdfUrl, 'cv.pdf')
         }, 
         imgChange(){
-            const showEl = this.$el.querySelector('.name');
-            showEl.classList.toggle('show');
+            // const showEl = this.$el.querySelector('.name');
+            // showEl.classList.toggle('show');
+            return this.displayItem = !this.displayItem
         },
     }
 
@@ -79,9 +80,11 @@ export default {
 
 .hero {
     padding: 140px 10% 100px;
+    min-height: 89vh;
     background:linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
               url('../../../images/hairis-min.jpg') no-repeat center center;
               background-size:cover;
+
 
 }
 .main {
@@ -92,7 +95,7 @@ export default {
 }
 .left {
     padding-right: 40px;
-    width:55%;
+    width:59%;
 }
 .left h1 {
     display: flex;
@@ -174,7 +177,7 @@ h2>span {
         padding: 30% 20%;
         width: 650px;
         height: 420px;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         button {
             padding: 10px 14px;
             border-radius: 5px;
@@ -185,17 +188,26 @@ h2>span {
         }
     }
     .name.show {
+        animation: showUp .4s ease-in-out forwards;
         display: block;
     }
 }
-@keyframes comeUp {
+@keyframes showUp {
     0% {
         opacity: 0.3;
+        display: block;
+    }
+    50%{
+        opacity: 0.6;
     }
     100% {
-        opacity: 100%;
+        opacity: 1;
+        display:block;
     }
 }
+// .show {
+//     animation: showUp .3s ease-in-out forwards;
+// }
 .cv-btn {
     padding: 10px 15px;
     background-color:#383838;
@@ -207,7 +219,9 @@ h2>span {
     transition: all ease-out .2s;
 }
 .cv-btn:hover{
-    box-shadow: 0 0 20px #383838;
+  transform: scale(.966);
+  color:#fff;
+  background-color:#2c2c2c;
 }
 /* icons */
 

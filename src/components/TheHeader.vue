@@ -91,8 +91,8 @@ header {
 <template>
     <header>
         <div class="logo">
-            <a href="home" >
-                Yusufbek.dev
+            <a href="#" >
+               Yusufbek.<span style="color: #4372e4; font-weight:700;">dev</span>
             </a>
         </div>
         <ul class="nav-list" ref="list">
@@ -131,7 +131,8 @@ export default {
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
 :root {
     --primary:#c72b3c;
     --second-primary-color:#61CE70;
@@ -143,6 +144,7 @@ export default {
 }
 header {
     position: sticky;
+    z-index: 99;
     top: 0px;
     width: 100vw;
     padding: 0 5%;
@@ -153,8 +155,23 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 13vh;
+    height: 11vh;
+    max-height: 13vh;
     /* box-shadow: 0px 0px 10px 0px gray; */
+}
+.logo {
+    a {
+        color:#a0a0a0;
+        font-size: 1.1rem;
+     font-family: 'Protest Strike', sans-serif;
+
+        &:hover {
+            color: #a0a0a0;
+        }
+        span {
+            font-family: inherit;
+        }
+    }
 }
 .nav-list {
     display: flex;
@@ -183,7 +200,7 @@ a {
     position: absolute;
     width: 0%;
     height: 3px;
-    background: linear-gradient(90deg, rgba(255,61,61,1) 0%, rgba(92,0,0,1) 100%, rgba(255,61,61,1) 100%);
+    background: #4372e4
 }
 .router-link-active::after {
     width: 100%;
@@ -192,7 +209,7 @@ a {
     color: #fff;
 }
 a:hover {
-    color: #c72b3c;
+    color: #4372e4;
 }
 a:hover::after {
     width: 100%;

@@ -1,27 +1,39 @@
 <template>
   <TheHeader />
   <TheHero />
+  <AboutMe />
+  <ThPortfolio />
+  <TheFooter />
+
 </template>
 
 <script>
-import TheHeader from './components/TheHeader';
-import TheHero from './components/pages/TheMain';
+import TheHeader from './components/TheHeader.vue';
+import TheHero from './components/pages/TheMain.vue';
+import AboutMe from './components/pages/AboutMe.vue';
+import ThPortfolio from './components/pages/ThePortfolio.vue';
+import TheFooter from './components/TheFooter.vue';
 
 export default {
   components: {
     TheHeader,
     TheHero,
+    AboutMe,
+    ThPortfolio,
+    TheFooter,
   }
 }
 </script>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
 
 *::before,
 *::after,
 * {
-  font-family: Jost, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', Jost, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -30,7 +42,9 @@ export default {
 }
 
 
-
+body {
+  background-color:#f6f5f5;
+}
 .is-typed {
   font-family: 'Monaco';
 }
@@ -66,4 +80,18 @@ export default {
     background-color: transparent;
   }
 }
+
+.page-title {
+  position: relative;
+  text-align: center;
+  padding-top: 40px;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #383838;
+}
+.page-title span {
+  color: #4372e4;
+}
+
+
 </style>
