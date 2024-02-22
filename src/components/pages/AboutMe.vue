@@ -73,7 +73,7 @@
         }
     }
     .about-info {
-        padding-top: 40px;
+        padding-top:40px;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -88,6 +88,7 @@
                 font-weight: 600;
             }
             p,a {
+                margin-bottom: 0;
                 font-size: 1rem;
                 color: #383838;
                 font-weight: 200;

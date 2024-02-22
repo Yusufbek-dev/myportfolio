@@ -1,7 +1,7 @@
 <template>
     <section>
         <h2 class="page-title">My <span>Portfolio</span></h2>
-        <div class="portfolio">
+        <!-- <div class="portfolio">
             <ul class="portfolio__list">
                 <li class="portfolio__list_item">
                     <img src="../../../images/websites/visa4uzb.jpg" alt="" class="img">
@@ -37,62 +37,217 @@
                     </div>
                 </li>
             </ul>
-        </div>
+        </div> -->
+
+
+        <swiper 
+            :breakpoints="{0:{ slidesPerView:1,spaceBetween:15 }, 650:{ slidesPerView:2,spaceBetween:20 }, 950:{ slidesPerView:3, } }"
+            :slidesPerView="3"
+            :grid="{
+            rows: 1,
+            }"
+            :spaceBetween="30"
+            :pagination="{
+            clickable: true,
+            dynamicBullets:true,
+            }"
+    
+            :grabCursor="ture"
+            :modules="modules"
+            class="mySwiper"
+
+            
+       
+        >
+            <swiper-slide class="sw">
+                <img class="sw-img" src="../../../images/websites/find-coach.jpg" alt="">
+                <p class="sw-text">
+                    <strong>Find coach:</strong>About find coachs and register as coach.<br> <br>
+                    <strong>Tools:</strong> Vue.js, Rooter, Vuex, firebase
+                </p>
+                <div class="sw-btns">
+                    <a href="#">Code</a>
+                    <a href="#">Watch</a>
+                </div>
+            </swiper-slide>
+            <swiper-slide class="sw">
+                <img class="sw-img" src="../../../images/websites/javascript-r.jpg" alt="">
+                <p class="sw-text">
+                    <strong>Find a meal and salad:</strong>About find recipes and create recipe <br> <br>
+                    <strong>Tools:</strong> javascript.js, html, css, firebase
+                </p>
+                <div class="sw-btns">
+                    <a href="#">Code</a>
+                    <a href="#">Watch</a>
+                </div>
+            </swiper-slide>
+            <swiper-slide class="sw">
+                <img class="sw-img" src="../../../images/websites/people.jpg" alt="">
+                <p class="sw-text">
+                    <strong>Consulting Agency:</strong>About Consulting Agency.  Growth Strateg <br> <br>
+                    <strong>Tools:</strong> Html, Scss, responsive
+                </p>
+                <div class="sw-btns">
+                    <a href="#">Code</a>
+                    <a href="#">Watch</a>
+                </div>
+            </swiper-slide>
+            <swiper-slide class="sw">
+                <img class="sw-img" src="../../../images/websites/find-coach.jpg" alt="">
+                <p class="sw-text">
+                    <strong>Find coach:</strong>This site help find a coach and also you can help other people with your knowlage. <br> <br>
+                    <strong>Tools:</strong> Vue.js, Rooter, Vuex, firebase
+                </p>
+                <div class="sw-btns">
+                    <a href="#">Code</a>
+                    <a href="#">Watch</a>
+                </div>
+            </swiper-slide>
+            <swiper-slide class="sw">
+                <img class="sw-img" src="../../../images/websites/find-coach.jpg" alt="">
+                <p class="sw-text">
+                    <strong>Find coach:</strong>This site help find a coach and also you can help other people with your knowlage. <br> <br>
+                    <strong>Tools:</strong> Vue.js, Rooter, Vuex, firebase
+                </p>
+                <div class="sw-btns">
+                    <a href="#">Code</a>
+                    <a href="#">Watch</a>
+                </div>
+            </swiper-slide>
+            <swiper-slide class="sw">
+                <img class="sw-img" src="../../../images/websites/find-coach.jpg" alt="">
+                <p class="sw-text">
+                    <strong>Find coach:</strong>This site help find a coach and also you can help other people with your knowlage. <br> <br>
+                    <strong>Tools:</strong> Vue.js, Rooter, Vuex, firebase
+                </p>
+                <div class="sw-btns">
+                    <a href="#">Code</a>
+                    <a href="#">Watch</a>
+                </div>
+            </swiper-slide>
+        </swiper>
     </section>
 </template>
 
-<style lang="scss" scoped>
+<script>
+import {Swiper, SwiperSlide} from 'swiper/vue';
+import "swiper/css"
 
-.portfolio {
+
+////////////////////
+
+
+  import 'swiper/css/grid';
+  import 'swiper/css/pagination';
+
+
+  // import required modules
+  import { Grid, Pagination } from 'swiper/modules';
+
+  export default {
+    components: {
+      Swiper,
+      SwiperSlide,
+    },
+    setup() {
+      return {
+        modules: [Grid, Pagination],
+      };
+    },
+  };
+
+</script>
+
+// <style lang="scss" scoped>
+
+.swiper {
+    // width: 80%;
+    margin: 40px 10%;
+    // padding: 40px auto;
+}
+.sw {
+    width: 200px;
     display: flex;
-    padding: 40px 10% 20px;
-    min-height: 89vh;
-    &__list {
-        display: flex;
-        justify-content: space-between;
-        &_item {
-            width: 30%;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            img {
-                max-width: 100%;
-                transition: all .3s;
-                &:hover {
-                    transform: scale(1.2);
-                }
-            }
-        }
-    }
-    .info {
-        padding-top: 20px;
-        display: flex;
-        flex-direction: column;
-        row-gap: 10px;
-        background-color: #373838;
-        &__title {
-            color: #eaeaea;
-            font-size: .9rem;
-            padding: 10px 0;
-        }
-        &__desc {
-            color: #eaeaea;
-            font-size: .7rem;
-        }
-        &__btns {
-            display: flex;
-            column-gap: 10px;
-        }
-        &__btn {
-            padding: 10px 20px;
+    flex-direction:column;
+    gap: 20px;
+    overflow: hidden;
+    padding-bottom: 50px;
+    a {
+        color: #eaeaea;
+        background-color: #4372e4;
+        display: inline-block;
+        padding: 7px 11px;
+        border-radius:20px;
+        margin-right: 15px;
+        font-size: .9rem;
+        transition: all .3s;
+        border:1.5px solid #4372e4;
+        &:hover {
+            cursor: pointer;
             color: #4372e4;
-            color: #eaeaea;
-            transition: all .3s;
-            &:hover {
-                opacity: .9;
-                color: #fff;
-            }
+            background-color: #eaeaea;
+
         }
     }
 }
+.sw-img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: all .3s;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+// .portfolio {
+//     display: flex;
+//     padding: 40px 10% 20px;
+//     min-height: 89vh;
+//     &__list {
+//         display: flex;
+//         justify-content: space-between;
+//         &_item {
+//             width: 30%;
+//             display: flex;
+//             flex-direction: column;
+//             overflow: hidden;
+//             img {
+//                 max-width: 100%;
+//                 transition: all .3s;
+//                 &:hover {
+//                     transform: scale(1.2);
+//                 }
+//             }
+//         }
+//     }
+//     .info {
+//         padding-top: 20px;
+//         display: flex;
+//         flex-direction: column;
+//         row-gap: 10px;
+//         background-color: #373838;
+//         &__title {
+//             color: #eaeaea;
+//             font-size: .9rem;
+//             padding: 10px 0;
+//         }
+//         &__desc {
+//             color: #eaeaea;
+//             font-size: .7rem;
+//         }
+//         &__btns {
+//             display: flex;
+//             column-gap: 10px;   
+//         }
+//         &__btn {
+//             padding: 10px 20px;
+//             color: #4372e4;
+//             color: #eaeaea;
+//             transition: all .3s;
+//             &:hover {
+//                 opacity: .9;
+//                 color: #fff;
+//             }
+//         }
+//     }
+// }
 </style>
