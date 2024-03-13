@@ -4,7 +4,7 @@
             <div class="left">
                 <h4>Hello,</h4>
                 <h1>
-                    I am A <VueWriter :array="arr" />
+                    I am A<VueWriter :array="arr" />
                 </h1>
                
                 <p class="main-description">Thank you for visiting! I'm developing creative & Interactive websites.
@@ -56,12 +56,12 @@ export default {
     data() {
         return {
               displayItem:false,
-              arr: ["Frontend Developer", "Freelancer"]
+              arr: ["Front-end Developer", "Freelancer"]
         }
     },
     methods: {
         downloadPdf() {
-            const pdfUrl = 'https://drive.google.com/file/d/1SZ31resszOFoXSIilVo8CSv-y0eGkEK8/view?usp=drive_link';
+            const pdfUrl = 'https://drive.google.com/file/d/1eURK-qHLpyOkHSXoKU6rBDiqkm44FHz3';
             saveAs(pdfUrl, 'cv.pdf')
         }, 
         imgChange(){
@@ -79,48 +79,85 @@ export default {
 
 
 .hero {
-    padding: 140px 10% 100px;
+    padding: 140px 8% 100px;
     min-height: 89vh;
     background:linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
               url('../../../images/hairis-min.jpg') no-repeat center center;
               background-size:cover;
-
-
+              @media (max-width: 605px) {
+                padding: 110px 5% 80px;
+              }
 }
 .main {
     width:100%;
     display: flex;
     justify-content: space-between;
     /* background-color:rgba(24, 23, 23, 0.76); */
+    @media (max-width: 950px) {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 30px;
+    }
 }
 .left {
     padding-right: 40px;
     width:59%;
-}
-.left h1 {
+
+    h1 {
     display: flex;
     column-gap: 10px;
     margin-bottom: 20px;
     font-size: 2.5rem;
     letter-spacing: 1px;
     color: #eaeaea;
-}
-.left h4 {
+    }
+    h4 {
     margin-bottom: 9px;
     font-size: 1.2rem;
     letter-spacing: 1px;
     color: #eaeaea;
-}
-h2>span {
-    color: #c72b3c;
-}
-.main-description {
+    } 
+    .main-description {
     margin-bottom: 40px;
     font-size: 1.3rem;
     letter-spacing: 1px;
     line-height: 30px;
     color: #eaeaea;
+    }
+   
+    @media (max-width: 950px) {
+        width: 100%;
+        padding-right: 0px;
+        h1 {
+            font-size: 2.2rem;
+        }
+        .main-description {
+            font-size: 1.1rem;
+        }
+    }
+    @media (max-width: 605px) {
+        h4 {
+            font-size: 1rem;
+        }
+        h1 {
+            font-size: 1.8rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-description {
+            font-size: 1rem;
+        }
+    }
+    @media (max-width: 370px) {
+        h4,.main-description {
+            font-size: .9rem;
+        }
+        h1 {
+            font-size: 1.6rem;
+        }
+    }
 }
+
 
 
 .right {
@@ -217,6 +254,11 @@ h2>span {
     cursor: pointer;
     font-size: 1rem;
     transition: all ease-out .2s;
+    @media (max-width: 605px) {
+        display: block;
+        width: 150px;
+        margin: 0 auto;
+    }
 }
 .cv-btn:hover{
   transform: scale(.966);
@@ -230,6 +272,11 @@ h2>span {
     width: 250px;
     display: flex;
     justify-content: space-between;
+    @media (max-width: 605px) {
+        width: 100%;
+        justify-content: center;
+        column-gap: 14px;
+    }
 }
 
 .icon img {
@@ -266,6 +313,33 @@ h2>span {
       display: block;
       max-width: 70px;
       max-height: 70px;
+    }
+  }
+  @media (max-width:950px) {
+    justify-content: start;
+    width: 100%;
+   
+    div {
+        flex-wrap: nowrap;
+        gap: 15px;
+        justify-content: start;
+        img {
+            min-width: 40px;
+            min-height: 40px;
+            max-width:50px;
+            max-height: 50px;
+        }
+    }
+  }
+  @media (max-width:605px) {
+    div {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+  }
+  @media (max-width: 370px) {
+    div {
+        gap: 8px;
     }
   }
 }

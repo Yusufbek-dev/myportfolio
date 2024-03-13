@@ -93,5 +93,12 @@ body {
   color: #4372e4;
 }
 
+.sub-title {
+  color: #383838;
+  font-size: 1.2rem;
+  padding: 15px 0;
+  text-align: center;
+}
+
 
 </style>

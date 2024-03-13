@@ -255,15 +255,15 @@ a:hover::after {
     .nav-list {
         z-index: 100;
         position: absolute;
-        top:13vh;
+        top:11vh;
         background-color: #000000ef;
         left: -100%;
         width: 100%;
-        height:87vh;
+        min-height:89vh;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        transition: .3s ease all
+        transition: .3s ease all;
     }
     .nav-list.active {
         left: 0;

@@ -44,13 +44,13 @@
     display: flex;
     justify-content: space-between;
     min-height: 89vh;
-    padding: 80px 10%;
+    padding: 80px 8%;
     &__left {
         width: 45%;
         display: block;
         img {
-            width: 500px;
-            height: 530px;
+            max-width: 80%;
+            max-height: 80%;
             transition: all .3s;
             &:hover {
                 transform:scale(1.1) rotate(5deg);
@@ -59,13 +59,13 @@
         }
     }
     &__right {
-        width: 48%;
+        width: 58%;
         &_text {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: #383838;
             text-align:justify;
-            letter-spacing: 1.5px;
-            line-height: 1.6;
+            letter-spacing: 1.3px;
+            line-height: 1.4;
             a {
                 color: #4372e4;
                 text-decoration: underline;
@@ -94,6 +94,19 @@
                 font-weight: 200;
             }
         }
+    }
+
+    @media (max-width: 950px) {
+        justify-content: center;
+        &__left {
+            display: none;
+        }
+        &__right {
+            width: 100%;
+        }
+    }
+    @media (max-width: 605px) {
+        padding: 60px 5%;
     }
 }
 
