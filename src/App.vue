@@ -1,9 +1,12 @@
 <template>
-  <TheHeader />
-  <TheHero />
-  <AboutMe />
-  <ThPortfolio />
-  <TheFooter />
+  <section>
+    <TheHeader />
+    <TheHero />
+    <AboutMe />
+    <ThPortfolio />
+    <TheContact />
+    <TheFooter />
+  </section>
 
 </template>
 
@@ -12,6 +15,7 @@ import TheHeader from './components/TheHeader.vue';
 import TheHero from './components/pages/TheMain.vue';
 import AboutMe from './components/pages/AboutMe.vue';
 import ThPortfolio from './components/pages/ThePortfolio.vue';
+import TheContact from './components/pages/TheContact.vue';
 import TheFooter from './components/TheFooter.vue';
 
 export default {
@@ -20,6 +24,7 @@ export default {
     TheHero,
     AboutMe,
     ThPortfolio,
+    TheContact,
     TheFooter,
   }
 }
@@ -44,6 +49,7 @@ export default {
 
 body {
   background-color:#f6f5f5;
+  overflow-x: hidden;
 }
 .is-typed {
   font-family: 'Monaco';

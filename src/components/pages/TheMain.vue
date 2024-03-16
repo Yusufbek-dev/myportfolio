@@ -51,22 +51,25 @@
 </template>
 
 <script>
+"use strict"
 import {saveAs} from 'file-saver';
 export default {
     data() {
         return {
               displayItem:false,
-              arr: ["Front-end Developer", "Freelancer"]
         }
     },
+  computed: {
+    arr() {
+        return ['Front-end Developer', 'Freelancer']
+    }
+  },
     methods: {
         downloadPdf() {
             const pdfUrl = 'https://drive.google.com/file/d/1eURK-qHLpyOkHSXoKU6rBDiqkm44FHz3';
             saveAs(pdfUrl, 'cv.pdf')
         }, 
         imgChange(){
-            // const showEl = this.$el.querySelector('.name');
-            // showEl.classList.toggle('show');
             return this.displayItem = !this.displayItem
         },
     }
@@ -141,8 +144,8 @@ export default {
         }
         h1 {
             font-size: 1.8rem;
-            display: flex;
-            flex-direction: column;
+            // display: flex;
+            // flex-direction: column;
         }
         .main-description {
             font-size: 1rem;

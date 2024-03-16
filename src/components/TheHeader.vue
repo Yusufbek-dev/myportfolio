@@ -147,7 +147,7 @@ header {
     z-index: 99;
     top: 0px;
     width: 100vw;
-    padding: 0 5%;
+    padding: 0 7%;
     background:linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
               url('../../images/hairis-min.jpg') no-repeat top center;
               background-size:cover;
@@ -186,7 +186,7 @@ header {
 a {
     font-family:"Poppins", sans-serif;
     position: relative;
-    color: rgb(42, 40, 40);
+    color: #2a2828;
     text-decoration:none;
     color: #a0a0a0;
     padding: 0 10px;
