@@ -1,6 +1,6 @@
 <template>
   <section>
-    <TheHeader />
+    <TheHeader  />
     <TheHero />
     <AboutMe />
     <ThPortfolio />
@@ -19,6 +19,7 @@ import TheContact from './components/pages/TheContact.vue';
 import TheFooter from './components/TheFooter.vue';
 
 export default {
+
   components: {
     TheHeader,
     TheHero,
@@ -26,8 +27,11 @@ export default {
     ThPortfolio,
     TheContact,
     TheFooter,
+  },
+  mounted: function() {
+    console.log(this.$refs['section'])
   }
-}
+} 
 </script>
 
 <style>
@@ -45,7 +49,9 @@ export default {
   box-sizing: border-box;
   text-decoration: none;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background-color:#f6f5f5;

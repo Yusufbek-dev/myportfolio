@@ -1,5 +1,5 @@
 <template>
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="main">
             <div class="left">
                 <h4>Hello,</h4>
@@ -80,9 +80,9 @@ export default {
 
 <style scoped lang="scss">
 
-
 .hero {
-    padding: 140px 8% 100px;
+ 
+    padding: 11vh 8% 100px;
     min-height: 89vh;
     background:linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
               url('../../../images/hairis-min.jpg') no-repeat center center;
@@ -92,6 +92,7 @@ export default {
               }
 }
 .main {
+    padding-top: 5vh;
     width:100%;
     display: flex;
     justify-content: space-between;

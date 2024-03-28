@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section id="about">
         <h2 class="page-title">About <span>Me</span></h2>
         <div class="about">
             <div class="about__left">
@@ -40,6 +40,9 @@
 </template>
 
 <style lang="scss" scoped>
+section {
+    padding-top: 11vh;
+}
 .about {
     display: flex;
     justify-content: space-between;

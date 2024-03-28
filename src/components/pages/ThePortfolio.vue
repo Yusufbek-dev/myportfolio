@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="portfoloi" id="portfolio" >
         <h2 class="page-title">My <span>Portfolio</span></h2>
         <p class="sub-title">Each project is a unique piece of development.</p>
         <!-- <div class="portfolio">
@@ -68,7 +68,7 @@
                 </p>
                 <div class="sw-btns">
                     <a href="#">Code</a>
-                    <a href="#">Live</a>
+                    <a href="#">See Live</a>
                 </div>
             </swiper-slide>
             <swiper-slide class="sw">
@@ -79,7 +79,7 @@
                 </p>
                 <div class="sw-btns">
                     <a href="#">Code</a>
-                    <a href="#">Live</a>
+                    <a href="#">See Live</a>
                 </div>
             </swiper-slide>
             <swiper-slide class="sw">
@@ -90,7 +90,7 @@
                 </p>
                 <div class="sw-btns">
                     <a href="#">Code</a>
-                    <a href="#">Live</a>
+                    <a href="#">See Live</a>
                 </div>
             </swiper-slide>
             <swiper-slide class="sw">
@@ -101,7 +101,7 @@
                 </p>
                 <div class="sw-btns">
                     <a href="#">Code</a>
-                    <a href="#">Live</a>
+                    <a href="#">See Live</a>
                 </div>
             </swiper-slide>
             <swiper-slide class="sw">
@@ -112,7 +112,7 @@
                 </p>
                 <div class="sw-btns">
                     <a href="#">Code</a>
-                    <a href="#">Live</a>
+                    <a href="#">See Live</a>
                 </div>
             </swiper-slide>
             <swiper-slide class="sw">
@@ -123,7 +123,7 @@
                 </p>
                 <div class="sw-btns">
                     <a href="#">Code</a>
-                    <a href="#">Live</a>
+                    <a href="#">See Live</a>
                 </div>
             </swiper-slide>
         </swiper>
@@ -160,7 +160,10 @@ import "swiper/css"
 </script>
 
 // <style lang="scss" scoped>
-
+.portfoloi {
+    padding-top: 11vh;
+    min-height: 89vh;
+}
 .swiper {
     // width: 80%;
     margin: 40px 8%;

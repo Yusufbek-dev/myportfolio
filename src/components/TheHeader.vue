@@ -1,92 +1,3 @@
-<!-- <template>
-    <header>
-      <nav class="nav">
-        <div>
-            <a href="#" class="logo">
-                <img src="../../images/yusuf.png" alt="Yusuf logo">
-            </a>
-        </div>
-        <ul class="nav-list">
-            <li class="nav-list__item">
-                <a href="#">Home</a>
-            </li>
-            <li class="nav-list__item">
-                <a href="#">About</a>
-            </li>
-            <li class="nav-list__item">
-                <a href="#">Portfolio</a>
-            </li>
-            <li class="nav-list__item">
-                <a href="#">Service</a>
-            </li>
-            <li class="nav-list__item">
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-      </nav>
-
-    </header>
-</template>
-
-<script>
-export default {
-
-}
-</script>
-
-<style scoped>
-
-
-
-header {
-    position: sticky;
-    height: 14vh;
-    background-color:#383838;
-}
-.logo img{
-    width: 140px;
-    height: 140px;
-    display: block;
-}
-.nav {
-    width: 90vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    row-gap: 20px;
-}
-.nav-list__item a{
-    position: relative;
-    font-size: 1.4rem;
-    color:#d8d8d8;
-}
-.nav-list__item a::after{
-        transition: 0.3s;
-        left: 0;
-        bottom: -10px;
-        content: "";
-        position: absolute;
-        width: 0%;
-        height: 3px;
-        background-color: rgb(134, 35, 227);
-
-}
-.nav-list__item {
-    margin-right: 60px;
-}
-.nav-list__item:last-child{
-    margin-right: 0;
-}
-
-</style> -->
-
 
 <template>
     <header>
@@ -97,16 +8,16 @@ header {
         </div>
         <ul class="nav-list" ref="list">
             <li class="nav-list__item" @click="barClick">
-                <a to="home" class="link" href="#">Home</a>
+                <a href="#hero" class="link active" @click="addActive">Home</a>
             </li>
             <li class="nav-list__item" @click="barClick">
-                <a href="service" class="link">About</a>
+                <a href="#about" class="link" @click="addActive">About</a>
             </li>
             <li class="nav-list__item" @click="barClick">
-                <a to="contact" class="link" href="#">Portfolio</a>
+                <a href="#portfolio" class="link" @click="addActive">Portfolio</a>
             </li>
-            <li class="nav-list__item" >
-                <a href="#" class="link">Contact</a>
+            <li class="nav-list__item" @click="barClick">
+                <a href="#contact" class="link" @click="addActive">Contact</a>
             </li>
         </ul>
         <div class="bar" ref="bar" @click="barClick">
@@ -116,7 +27,7 @@ header {
         </div>
     </header>
 </template>
-📞
+
 <script>
 export default {
     methods: {
@@ -126,7 +37,14 @@ export default {
             refElement.classList.toggle('active')
             refList.classList.toggle('active')
         },
-    }
+        addActive(event){
+            let allLinks = document.querySelectorAll('.link');
+            allLinks.forEach(link=>{
+                link.classList.remove('active');
+            })
+            event.target.classList.add('active')
+        }
+    },
 }
 
 </script>
@@ -202,14 +120,17 @@ a {
     height: 3px;
     background: #4372e4
 }
-.router-link-active::after {
-    width: 100%;
-}
-.router-link-active {
-    color: #fff;
-}
-a:hover {
+// .router-link-active::after {
+//     width: 100%;
+// }
+// .router-link-active {
+//     color: #fff;
+// }
+router-link:hover, .active {
     color: #4372e4;
+}
+.active::after {
+    width: 100%;
 }
 a:hover::after {
     width: 100%;
