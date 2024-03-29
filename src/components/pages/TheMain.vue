@@ -98,6 +98,7 @@ export default {
     justify-content: space-between;
     /* background-color:rgba(24, 23, 23, 0.76); */
     @media (max-width: 950px) {
+        padding-top: 0vh;
         flex-direction: column;
         align-items: center;
         row-gap: 30px;

@@ -47,7 +47,7 @@ section {
     display: flex;
     justify-content: space-between;
     min-height: 89vh;
-    padding: 80px 8%;
+    padding: 80px 8% 10px;
     &__left {
         width: 45%;
         display: block;
@@ -109,7 +109,7 @@ section {
         }
     }
     @media (max-width: 605px) {
-        padding: 60px 5%;
+        padding: 60px 5% 10px;
     }
 }
 

@@ -61,69 +61,69 @@
        
         >
             <swiper-slide class="sw">
-                <img class="sw-img" src="../../../images/websites/find-coach.jpg" alt="">
+                <img class="sw-img" src="../../../images/websites/find-coach.jpg" alt="find coach">
                 <p class="sw-text">
                     <strong>Find coach:</strong>About find coachs and register as coach.<br> <br>
                     <strong>Tools:</strong> Vue.js, Rooter, Vuex, firebase
                 </p>
                 <div class="sw-btns">
-                    <a href="#">Code</a>
-                    <a href="#">See Live</a>
+                    <a arget="_blank" href="https://github.com/Yusufbek-dev/Find-coach">Code</a>
+                    <a arget="_blank" href="https://coach-finder-for-devs.netlify.app/coaches">See Live</a>
                 </div>
             </swiper-slide>
             <swiper-slide class="sw">
-                <img class="sw-img" src="../../../images/websites/javascript-r.jpg" alt="">
+                <img class="sw-img" src="../../../images/websites/javascript-r.jpg" alt="Find a food">
                 <p class="sw-text">
                     <strong>Find a meal and salad:</strong>About find recipes and create recipe <br> <br>
                     <strong>Tools:</strong> javascript.js, html, css, firebase
                 </p>
                 <div class="sw-btns">
-                    <a href="#">Code</a>
-                    <a href="#">See Live</a>
+                    <a arget="_blank" href="https://github.com/Yusufbek-dev/forkify-website">Code</a>
+                    <a target="_blank" href="https://uzrecipes-website.netlify.app/">See Live</a>
                 </div>
             </swiper-slide>
             <swiper-slide class="sw">
-                <img class="sw-img" src="../../../images/websites/people.jpg" alt="">
+                <img class="sw-img" src="../../../images/websites/people.jpg" alt="consulting agency">
                 <p class="sw-text">
                     <strong>Consulting Agency:</strong>About Consulting Agency.  Growth Strateg <br> <br>
                     <strong>Tools:</strong> Html, Scss, responsive
                 </p>
                 <div class="sw-btns">
-                    <a href="#">Code</a>
-                    <a href="#">See Live</a>
+                    <a target="_blank" href="https://github.com/Yusufbek-dev/consulting">Code</a>
+                    <a target="_blank" href="https://consulting-website.netlify.app/">See Live</a>
                 </div>
             </swiper-slide>
             <swiper-slide class="sw">
-                <img class="sw-img" src="../../../images/websites/find-coach.jpg" alt="">
+                <img class="sw-img" src="../../../images/websites/portfolio.jpg" alt="portfolio website">
                 <p class="sw-text">
-                    <strong>Find coach:</strong>This site help find a coach and also you can help other people with your knowlage. <br> <br>
-                    <strong>Tools:</strong> Vue.js, Rooter, Vuex, firebase
+                    <strong>Portfolio site:</strong>This is my portfolio website.About my experience and about myself. <br> <br>
+                    <strong>Tools:</strong> Vue.js, Rooter, Sass, wreiter,
                 </p>
                 <div class="sw-btns">
-                    <a href="#">Code</a>
-                    <a href="#">See Live</a>
+                    <a href="https://github.com/Yusufbek-dev/myportfolio">Code</a>
+                    <a href="https://yusufbek-portfolio-live.netlify.app/">See Live</a>
                 </div>
             </swiper-slide>
             <swiper-slide class="sw">
-                <img class="sw-img" src="../../../images/websites/find-coach.jpg" alt="">
+                <img class="sw-img" src="../../../images/websites/visa4uzb.jpg" alt="visa">
                 <p class="sw-text">
-                    <strong>Find coach:</strong>This site help find a coach and also you can help other people with your knowlage. <br> <br>
-                    <strong>Tools:</strong> Vue.js, Rooter, Vuex, firebase
+                    <strong>Visa consulting:</strong>This site help you get a visa. This site for Uzbekistan residence. <br> <br>
+                    <strong>Tools:</strong> Vue.js, Rooter, sass.
                 </p>
                 <div class="sw-btns">
-                    <a href="#">Code</a>
-                    <a href="#">See Live</a>
+                    <a href="https://github.com/Yusufbek-dev/visa-website">Code</a>
+                    <a href="https://visa4uzb.uz/home">See Live</a>
                 </div>
             </swiper-slide>
             <swiper-slide class="sw">
-                <img class="sw-img" src="../../../images/websites/find-coach.jpg" alt="">
+                <img class="sw-img" src="../../../images/websites/bootstrap.jpg" alt="Organic food">
                 <p class="sw-text">
-                    <strong>Find coach:</strong>This site help find a coach and also you can help other people with your knowlage. <br> <br>
-                    <strong>Tools:</strong> Vue.js, Rooter, Vuex, firebase
+                    <strong>Organic food agency:</strong>This website about Organic food agency and their porducts. <br> <br>
+                    <strong>Tools:</strong> bootstrap, Sass, javascript
                 </p>
                 <div class="sw-btns">
-                    <a href="#">Code</a>
-                    <a href="#">See Live</a>
+                    <a href="https://github.com/Yusufbek-dev/organic-food-website">Code</a>
+                    <a href="https://organic-foods.netlify.app/">See Live</a>
                 </div>
             </swiper-slide>
         </swiper>

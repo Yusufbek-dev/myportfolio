@@ -4,10 +4,17 @@
         <div class="contact">
             <div class="contact__left">
                 <h3 class="send-message">Send a Message</h3>
-                <form action="">
-                    <input type="text" placeholder="Your name" required>
-                    <input type="email" placeholder="Your email" required>
-                    <textarea name="Message" id="" cols="30" rows="10" placeholder="Your message" required></textarea>
+                <form action="" @submit.prevent="formSubmit">
+                    <input type="text" placeholder="Your name" v-model.trim="userName" @blur="validateInput" required :class="{invalid:userNameVal === 'invalid'}">
+                    <p class="errText" v-if="userNameVal === 'invalid'">Please enter a valid name!</p>
+                    <input type="email" placeholder="Your email" v-model.trim="userEmail" @blur="validateEmail" required :class="{invalid:userEmailVal === 'invalid'}">
+                    <p class="errText" v-if="userEmailVal === 'invalid'">Please enter a valid Email!</p>
+                    <textarea name="Message" id="" cols="30" rows="10" placeholder="Enter message" 
+                    v-model.trim="message" 
+                    @blur="validateMessage" 
+                    required 
+                    :class="{invalid:userMessage === 'invalid'}"></textarea>
+                    <p v-if="submitMessage === true" class="validText">Your message sent!</p>
                     <input type="submit" value="send">
                 </form>
             </div>
@@ -31,6 +38,59 @@
         </div>
     </section>
 </template>
+
+<script>
+
+export default {
+    data() {
+        return {
+            userName:'',
+            userEmail:'',
+            message:'',
+            userNameVal:'panding',
+            userEmailVal:'panding',
+            userMessage:'panding',
+            submitMessage:false
+        }
+    },
+    methods:{
+        formSubmit() {
+            this.submitMessage = true
+            this.userEmail = '';
+                this.userName = '';
+                this.message = '';
+            setTimeout(() => {
+                this.submitMessage = false;
+               
+            }, 2500);
+        },
+        validateInput() {
+            if(this.userName === '') {
+                this.userNameVal = 'invalid'
+            } else {
+                this.userNameVal = 'valid'
+            }
+        },
+        validateEmail() {
+            if(this.userEmail === '' || !this.userEmail.includes('@')) {
+                this.userEmailVal = 'invalid'
+            } else {
+                this.userEmailVal = 'valid'
+            }
+        },
+        validateMessage() {
+            if(this.message.length < 12) {
+                this.userMessage = 'invalid'
+            } else {
+                this.userMessage = 'valid'
+            }
+        }
+    }
+    
+}
+
+</script>
+
 
 <style lang="scss" scoped>
   section {
@@ -56,7 +116,7 @@
                 background-color: #2a2828;
                 color: #a0a0a0;
                 font-size: 1rem;
-                border: none;
+                border: 1px solid #a0a0a0;
                 &::placeholder {
                     color: #a0a0a0;
                     font-size: 1.1rem;
@@ -71,6 +131,18 @@
                         color: #2a2828;
                     }
                 }
+            }
+            input[type=text].invalid,
+            input[type=email].invalid {
+                border: 1px solid #d20808;
+            }
+
+            .errText {
+                margin-top: -10px;
+                color: #d20808;
+            }
+            .validText {
+                color: #06bd18;
             }
             input[type=submit] {
                 margin:20px 0 0;
@@ -96,6 +168,12 @@
                 &:focus {
                     outline: none;
                 }
+            }
+            textarea.invalid {
+                border:#d20808 solid 1.5px;
+                &::placeholder {
+                        color: #d20808;
+                    }
             }
         }
         @media (max-width: 950px) {
