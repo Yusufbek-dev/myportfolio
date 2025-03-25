@@ -112,7 +112,7 @@
                 </p>
                 <div class="sw-btns">
                     <a href="https://github.com/Yusufbek-dev/visa-website">Code</a>
-                    <a href="https://visa4uzb.uz/home">See Live</a>
+                    <a href="https://visa4uzb.netlify.app/home">See Live</a>
                 </div>
             </swiper-slide>
             <swiper-slide class="sw">

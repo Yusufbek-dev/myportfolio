@@ -29,7 +29,7 @@
             <div class="right">
                 <div class="shape"  @mouseenter="imgChange" @mouseleave="imgChange">
                     <div class="name" :class="{show:displayItem}">I'm
-                       Yusufbek <br>A Web Developer <br><button>Contact me</button>
+                       Yusufbek <br>A Web Developer <br><a class="contact-btn" href="#contact">Contact me</a>
                     </div>
                     <img class="img" src="../../../images/yusufbek-removebg.png" alt="hero img">ß
                    
@@ -220,8 +220,10 @@ export default {
         width: 650px;
         height: 420px;
         font-size: 1.6rem;
-        button {
-            padding: 10px 14px;
+        .contact-btn {
+            display: inline-block;
+            font-size: 1rem;
+            padding: 8px 11px;
             border-radius: 5px;
             color: #fff;
             background-color: #4372e4;

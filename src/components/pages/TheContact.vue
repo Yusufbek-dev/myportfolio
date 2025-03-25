@@ -55,14 +55,15 @@ export default {
     },
     methods:{
         formSubmit() {
-            this.submitMessage = true
-            this.userEmail = '';
+                this.submitMessage = true
+                this.userEmail = '';
                 this.userName = '';
                 this.message = '';
             setTimeout(() => {
                 this.submitMessage = false;
                
             }, 2500);
+          
         },
         validateInput() {
             if(this.userName === '') {
@@ -79,7 +80,7 @@ export default {
             }
         },
         validateMessage() {
-            if(this.message.length < 12) {
+            if(this.message.length < 1) {
                 this.userMessage = 'invalid'
             } else {
                 this.userMessage = 'valid'
